@@ -4,7 +4,7 @@ import numpy as np
 
 
 
-def animate(pos, ori, nutrient_concentration, L, number_of_frames, interval=1):
+def animate(pos,nutrient_concentration, L, number_of_frames, interval=1):
     fig, ax = plt.subplots(figsize=(6, 6))
 
     # Set axis limits
@@ -12,10 +12,10 @@ def animate(pos, ori, nutrient_concentration, L, number_of_frames, interval=1):
     ax.set_ylim(0, L)
 
     # Initial heatmap of the nutrient concentration
-    im = ax.imshow(nutrient_concentration[0].T, extent=[0, L, 0, L],origin="lower" )
+    im = ax.imshow(nutrient_concentration[0].T, extent=[0, L, 0, L],origin="lower")
 
     # Initial quiver plot for particle movement
-    qv = ax.quiver(pos[0][:, 0], pos[0][:, 1], ori[0][:,0], ori[0][:,1], color="black")
+    qv = ax.scatter(pos[0][:, 0], pos[0][:, 1], color="black",s=5)
 
     # Animation function
     def update(i):
@@ -24,7 +24,7 @@ def animate(pos, ori, nutrient_concentration, L, number_of_frames, interval=1):
 
         # Update the position and direction of particles
         qv.set_offsets(pos[i])
-        qv.set_UVC(ori[i][:,0], ori[i][:,1])
+ 
 
         return im,          qv  
        # return qv
