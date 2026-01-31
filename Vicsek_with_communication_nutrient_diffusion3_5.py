@@ -13,7 +13,6 @@ def normalise_vector(vector):
 
 
 
-#This one travels 90 degrees to the right of the gradient
 
                                                          #Here one can set initial conditions if not they wil be set to default values further down
 def Vicsek_with_communication_nutrient_diffusion3_5(v_0, N,L,c_D,evaporation,rate_of_addition, n_D,growth_rate,K,comsumption_rate,alpha,  Grid_size , iterations,initial_pos=None,initial_c_concentration=None,initial_n_concentration=None,print_iteration=True):
@@ -129,4 +128,5 @@ def Vicsek_with_communication_nutrient_diffusion3_5(v_0, N,L,c_D,evaporation,rat
 
                       
         return pos,orientation,c_concentatrion,n_concentatrion
+
 
